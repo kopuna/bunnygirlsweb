@@ -1,33 +1,36 @@
-<div class="container">
-    <div class="left-section">
-        <div class="price-list">
-            <div class="list-header">My Prices &lt;3</div>
-            <div class="price-category">Crush</div>
-                <div class="price-item"><span>Shoe</span> <span>1000$</span></div>
-                <div class="price-item"><span>Barefoot</span> <span>2000$</span></div>
-                <div class="price-item"><span>Inshoe</span> <span>4000$</span></div>
-                <div class="price-item"><span>Butt</span> <span>2500$</span></div>
-                <div class="price-item"><span>Breast</span> <span>5000$</span></div>
-                <div class="price-item"><span>Hands</span> <span>700$</span></div>
-            <div class="price-category">Vore</div>
-                <div class="price-item"><span>Swallow</span> <span>2000$</span></div>
-                <div class="price-item"><span>Chewing</span> <span>1200$</span></div>
-            <div class="price-category">Extras</div>
-                <div class="price-item"><span>F. Worship</span> <span>80$/min</span></div>
-                <div class="price-item"><span>F. Massage</span> <span>60$/min</span></div>
-                <div class="price-item"><span>Antiacids</span> <span>5000$</span></div>
-                <div class="price-item"><span>Toenails</span> <span>100$</span></div></div>
-        <img src="../../../assets/toki.png" alt="oops somthing went wrong">
-    </div>
-    <div class="right-section">
-        <h1><span id="name">Toki</span></h1>
-        <p><strong>Services: <span id="services-count">4122</span></strong></p>
-        <p><span id="description">The boss and founder of Bunny Girls! Also the most popular girl here! Toki is playful and dominant. She gives the best service for her customers and will happily accept every idea you give her. She also has a lot of experience and knows how to make the pleasure last longer in vore and crush.</span></p>
-        <hr>
-        <p class="quote">"<span id="quote">Hi! Welcome to Bunny Girls. I'm Toki. First of all, thank you for coming here. You are a pretty good male for volunteering to be eradicated in order to make the world a better place. In order to thank you, I'll give you the best vore/crush service you will experience. And if you want anything specific, don’t be shy! I'm open-minded!</span>"</p>
-        <div class="buttons">
-            <a href="./gallery/tokiGallery.html">Visit her gallery</a>
-            <a href="./more/tokiMore.html">More about her</a>
+@if (girl) {
+    <div class="container">
+        <div class="left-section">
+            <div class="price-list">
+                <div class="list-header">My Prices &lt;3</div>
+                <div class="price-category">Crush</div>
+                    <div class="price-item"><span>Shoe</span><span>{{ girl.prices.shoe }}</span></div>
+                    <div class="price-item"><span>Barefoot</span><span>{{ girl.prices.barefoot }}</span></div>
+                    <div class="price-item"><span>Inshoe</span><span>{{ girl.prices.inshoe }}</span></div>
+                    <div class="price-item"><span>Butt</span><span>{{ girl.prices.butt }}</span></div>
+                    <div class="price-item"><span>Breast</span><span>{{ girl.prices.breast }}</span></div>
+                    <div class="price-item"><span>Hands</span><span>{{ girl.prices.hands}}</span></div>
+                <div class="price-category">Vore</div>
+                    <div class="price-item"><span>Swallow</span><span>{{ girl.prices.swallow }}</span></div>
+                    <div class="price-item"><span>Chewing</span><span>{{ girl.prices.chewing }}</span></div>
+                <div class="price-category">Extras</div>
+                    <div class="price-item"><span>F. Worship</span><span>{{ girl.prices.fWorship }}</span></div>
+                    <div class="price-item"><span>F. Massage</span><span>{{ girl.prices.fMassage }}</span></div>
+                    <div class="price-item"><span>Antiacids</span><span>{{ girl.prices.anitacids }}</span></div>
+                    <div class="price-item"><span>Toenails</span><span>{{ girl.prices.toenails }}</span></div>
+            </div>
+            <img [ngSrc]="getProfileImg()" fill loading="lazy" alt="oops somthing went wrong">
+        </div>
+        <div class="right-section">
+            <h1></h1>
+            <p><strong>Services: {{ girl.services }}</strong></p>
+            <p><span id="description">{{ girl.profile.description }}</span></p>
+            <hr>
+            <p class="quote">"{{ girl.profile.quote }}"</p>
+            <div class="buttons">
+                <a href="">Visit her gallery</a>
+                <a href="">More about her</a>
+            </div>
         </div>
     </div>
-</div>
+}
