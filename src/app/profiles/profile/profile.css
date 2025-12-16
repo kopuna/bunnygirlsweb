@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+h1 {
+    font-family: 'Prata', serif;
+    font-size: 36px;
+}
+
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+}
+.left-section {
+    max-height: 450px;
+    width: 60%;
+    padding: 20px;
+    background: #c07baa;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 5px solid #e596cd;
+}
+.price-list {
+    text-align: left;
+    font-size: 12px;
+    color: white;
+    width: 70%;
+    background: #c07baa;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Prata', serif;
+}
+.price-item {
+    display: flex;
+    justify-content: space-between;
+}
+.left-section img {
+    max-width: 63%;
+    border-radius: 10px;
+    margin-left: 20px;
+    border: 3px solid #e596cd;
+}
+.right-section {
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+    font-family: 'Prata', serif;
+}
+h1 {
+    font-size: 36px;
+}
+.price-category {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+.list-header {
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-style: italic;
+    border-bottom: 2px solid #e596cd;
+}
+hr {
+    margin: 10px 0;
+}
+.quote {
+    font-style: italic;
+    color: gray;
+}
+.buttons {
+    margin-top: 20px;
+}
+.buttons a {
+    display: inline-block;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #e596cd;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+    
+}
+.buttons a:hover {
+    background-color: #e596cd;
+}

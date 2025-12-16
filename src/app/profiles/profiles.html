@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="title">Our Profiles </div>
+    <div class="grid">
+        @for (girl of girls; track girl) {
+            <a [href]="getProfileLink(girl.name)" class="profile">
+                <img [src]="getHeadImg(girl.name)" alt="oops somthing went wrong">
+                <div class="overlay">
+                    <div class="name">{{ girl.name }}</div>
+                    <div class="count">Service Count: {{ girl.services }}</div>
+                </div>
+            </a>
+        }
+    </div>
+</div>
