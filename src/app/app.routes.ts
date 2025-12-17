@@ -14,6 +14,7 @@ export const routes: Routes = [
     },
     {
         path: 'profile/:name',
-        component: Profile
+        component: Profile,
+        runGuardsAndResolvers: 'always',
     },
 ];

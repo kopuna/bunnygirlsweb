@@ -1,51 +1,48 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subject, combineLatest } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { Girl } from '../../utils/girl';
 import { GetGirlsService } from '../../utils/getGirlsService';
-import { ActivatedRoute } from '@angular/router';
-import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
-  imports: [
-    NgOptimizedImage
-  ],
+  imports: [],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
-export class Profile implements OnInit {
-  girls$: Observable<Girl[]>;
-  girls: Girl[] = [];
+export class Profile implements OnInit, OnDestroy {
   girl: Girl | undefined;
-  name: string = '';
+  private destroy$ = new Subject<void>();
 
-  constructor(private getGirlsService: GetGirlsService, private cdr: ChangeDetectorRef, private route: ActivatedRoute) {
-    this.girls$ = this.getGirlsService.getGirls();
-  }
+  constructor(
+    private getGirlsService: GetGirlsService,
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.name = params.get('name') || '';
-      
-      this.girls$.subscribe(values => {
-        this.girls = values;
-        this.girl = this.filterGirlsByName(this.name);
-      });
+    combineLatest([
+      this.route.paramMap,
+      this.getGirlsService.getGirls()
+    ])
+    .pipe(takeUntil(this.destroy$))
+    .subscribe(([params, girls]) => {
+      const name = params.get('name') || '';
+      this.girl = girls.find(g => 
+        g.name.toLowerCase().includes(name.toLowerCase())
+      );
+      this.cdr.detectChanges();
     });
-    
-    this.cdr.detectChanges();
   }
-  
-  filterGirlsByName(name: string): Girl | undefined {
-    return this.girls.find(girl =>
-      girl.name.toLowerCase().includes(name.toLowerCase())
-    );
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   getProfileImg(): string {
-    var lowerName: string = this.girl!.name.toLowerCase();
-    var link = this.girl?.galleryDestination + '/' + lowerName + '.png';
-    console.log(link);
-    return link;
+    if (!this.girl) return '';
+    return `${this.girl.galleryDestination}/${this.girl.name.toLowerCase()}.png`;
   }
 }

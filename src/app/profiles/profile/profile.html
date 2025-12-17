@@ -19,10 +19,10 @@
                     <div class="price-item"><span>Antiacids</span><span>{{ girl.prices.anitacids }}</span></div>
                     <div class="price-item"><span>Toenails</span><span>{{ girl.prices.toenails }}</span></div>
             </div>
-            <img [ngSrc]="getProfileImg()" fill loading="lazy" alt="oops somthing went wrong">
+            <img [src]="getProfileImg()" alt="oops somthing went wrong" />
         </div>
         <div class="right-section">
-            <h1></h1>
+            <h1>{{ girl.name }}</h1>
             <p><strong>Services: {{ girl.services }}</strong></p>
             <p><span id="description">{{ girl.profile.description }}</span></p>
             <hr>
