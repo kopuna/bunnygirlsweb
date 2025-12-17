@@ -18,7 +18,6 @@ export class Profiles implements OnInit{
   }
 
   async ngOnInit() {
-    // this.girls$ = this.getGirlsService.getGirls();
     this.girls$.subscribe((values) => {
       values.forEach(value =>
         this.girls.push(value)
