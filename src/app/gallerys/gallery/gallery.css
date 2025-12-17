@@ -1,0 +1,140 @@
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+.container {
+    background: white;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: block;
+}
+.title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Prata', serif;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.asset {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 4px solid #e596cd;
+    font-size: 0;
+}
+.asset .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 20px;
+    text-align: center;
+}
+.asset .overlay .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.asset img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 12px;
+}
+.asset:hover .overlay {
+    opacity: 1;
+}
+.asset:hover img {
+    filter: grayscale(100%);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img,
+.lightbox video {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0 20px;
+  user-select: none;
+}
+
+#prevBtn { left: 0; }
+#nextBtn { right: 0; }
+
+.lightbox .close {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+.media-type {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none;
+}

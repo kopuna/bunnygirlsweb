@@ -1,0 +1,85 @@
+h1 {
+    font-family: 'Prata', serif;
+    font-size: 36px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+}
+.names {
+    color: black;
+    text-decoration: none;
+}
+.container {
+    background: white;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+.title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Prata', serif;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+.profile {
+    position: relative;
+    width: 200px;
+    height: auto;
+    border-radius: 0; /* remove circle */
+    background: white;
+    padding: 15px 15px 35px 15px; /* bottom space = caption area */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.profile .overlay {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    opacity: 1;
+    color: #333;
+    font-family: 'Prata', serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.profile .overlay .name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: -7px;
+}
+.profile .overlay .count {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.profile:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.35),
+                0 0 15px rgba(229, 150, 205, 0.6); /* pink glow */
+}
