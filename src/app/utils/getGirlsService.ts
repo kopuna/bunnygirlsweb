@@ -7,7 +7,7 @@ import { Girl } from './girl';
   providedIn: 'root'
 })
 export class GetGirlsService {
-  private url = '/assets/model/girls.json';
+  private url = 'assets/model/girls.json';
   private girls$: Observable<Girl[]>;
   
   constructor(private http: HttpClient) {
