@@ -2,7 +2,7 @@
   {
     "name": "Asuna",
     "services": "1880",
-    "galleryDestination": "/assets/galleryAssets/asuna",
+    "galleryDestination": "assets/galleryAssets/asuna",
     "prices": {
         "shoe": "600$",
         "barefoot": "500$",
@@ -50,7 +50,7 @@
   {
     "name": "Hifumi",
     "services": "",
-    "galleryDestination": "/assets/galleryAssets/hifumi",
+    "galleryDestination": "assets/galleryAssets/hifumi",
     "prices": {
         "shoe": "",
         "barefoot": "",
@@ -98,7 +98,7 @@
   {
     "name": "Iori",
     "services": "3042",
-    "galleryDestination": "/assets/galleryAssets/iori",
+    "galleryDestination": "assets/galleryAssets/iori",
     "prices": {
         "shoe": "500$",
         "barefoot": "1800$",
@@ -146,7 +146,7 @@
   {
     "name": "Lamii",
     "services": "52",
-    "galleryDestination": "/assets/galleryAssets/lamii",
+    "galleryDestination": "assets/galleryAssets/lamii",
     "prices": {
         "shoe": "90$",
         "barefoot": "150$",
@@ -194,7 +194,7 @@
   {
     "name": "Mika",
     "services": "1045",
-    "galleryDestination": "/assets/galleryAssets/mika",
+    "galleryDestination": "assets/galleryAssets/mika",
     "prices": {
         "shoe": "600$",
         "barefoot": "500$",
@@ -242,7 +242,7 @@
   {
     "name": "Noah",
     "services": "",
-    "galleryDestination": "/assets/galleryAssets/noah",
+    "galleryDestination": "assets/galleryAssets/noah",
     "prices": {
         "shoe": "",
         "barefoot": "",
@@ -290,7 +290,7 @@
   {
     "name": "Toki",
     "services": "4122",
-    "galleryDestination": "/assets/galleryAssets/toki",
+    "galleryDestination": "assets/galleryAssets/toki",
     "prices": {
         "shoe": "1000$",
         "barefoot": "2000$",
@@ -339,7 +339,7 @@
   {
     "name": "Yuka",
     "services": "367",
-    "galleryDestination": "/assets/galleryAssets/yuka",
+    "galleryDestination": "assets/galleryAssets/yuka",
     "prices": {
         "shoe": "200$",
         "barefoot": "400$",
